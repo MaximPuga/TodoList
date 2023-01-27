@@ -172,6 +172,9 @@ ul {
     text-decoration: line-through;
     background: #000;
 }
+.li-hidden{
+    display: none;
+}
 .btn{
     background: red;
     border: none;
