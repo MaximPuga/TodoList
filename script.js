@@ -5,6 +5,7 @@ const btn = document.querySelector('#btn-goal');
 const button = document.querySelector('.btn');
 const result = document.querySelector('#result');
 const done = document.querySelector('.done');
+const appointed = document.querySelector('.appointed');
 
 //add event
 btn.addEventListener('click', (e) => {
@@ -12,6 +13,14 @@ btn.addEventListener('click', (e) => {
     if(enter.value === '') return;
     createDeleteElements(enter.value);
     enter.value = '';
+});
+
+done.addEventListener('click', (e) =>{
+    result.classList.add('li-hidden');
+});
+
+appointed.addEventListener('click', (e) =>{
+    result.classList.remove('li-hidden');
 });
 
 //create and delete todo
@@ -24,7 +33,7 @@ function createDeleteElements(value) {
 
     btn.className = 'btn';
     btn.textContent = 'done';
-    li.appendChild(btn)
+    li.appendChild(btn);
 
 //remove todo
     btn.addEventListener('click', (e) => {
@@ -33,8 +42,8 @@ function createDeleteElements(value) {
 
 //toggle class active
     li.addEventListener('click', (e) => {
-        li.classList.toggle('li-active')
-    })
+        li.classList.toggle('li-active');
+    });
 
     result.appendChild(li);
 };
